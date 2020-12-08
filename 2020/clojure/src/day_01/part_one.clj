@@ -1,4 +1,4 @@
-(ns day_01.core
+(ns day-01.part-one
   (:require [clojure.string :as str]))
 
 
