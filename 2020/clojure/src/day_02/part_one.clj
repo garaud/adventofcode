@@ -20,8 +20,8 @@
 
 
 (defn run [opts]
-  "clj -X day-02.part-01/run"
+  "clj -X day-02.part-one/run"
   (let [policy (map extract-content (read-password-policy))
         predicates (map password-valid? policy)
         solution (reduce + (map #(if % 1 0) predicates))]
-    (println "solution: ", solution)))
+    (println "solution: " solution)))
