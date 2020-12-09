@@ -3,6 +3,6 @@
 
 
 (defn read-grid []
-  "read the input. skip the first line"
+  "read the input."
    (-> (slurp "src/day_03/input")
      (str/split #"\n")))
