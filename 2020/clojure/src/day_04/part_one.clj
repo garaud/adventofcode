@@ -24,7 +24,7 @@
   ([passport] (present? passport MANDATORY-FIELDS))
   ([passport mandatory-fields]
    (let [pfields (fields passport) ;; list of fields
-         ;; list of (true true nil true) if mandatory fields is in passport fields
+         ;; list of (true true nil true) if mandatory fields is in passport fields (or not)
          mask (map #(is-in? pfields %) mandatory-fields)]
      ;; if nil is in the list, the passport is not valid
      (not (is-in? mask nil)))))
@@ -33,6 +33,6 @@
 (defn run [opts]
   "clj -X day-04.part-one/run"
   (let [passports (read-passports)
-        valids (map (comp #(if % 1 0) present?) passports)
-        solution (reduce + valids)]
+        valids (filter present? passports)
+        solution (count valids)]
     (println "solution:" solution)))
