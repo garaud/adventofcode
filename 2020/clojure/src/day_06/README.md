@@ -13,4 +13,7 @@ Launch with `clj -X day-06.part-one/run`.
 
 ## Part two
 
+You don't need to identify the questions to which anyone answered "yes"; you need to
+identify the questions to which everyone answered "yes"!
+
 Launch with `clj -X day-06.part-two/run`.
