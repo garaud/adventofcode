@@ -6,9 +6,9 @@
 
 Test with Julia 1.8.x
 
-The code can be splitted into a few `.jl` files.
+The code may be splitted into a few `.jl` files.
 
-In order to get the answer for the different part of a problem to solve, just do:
+In order to get the answer for the different parts of a problem to solve, just do:
 
 ```
 > julia -L part_one.jl -E "main()"
@@ -21,8 +21,7 @@ There will be always a function `main()` which will return the answer.
 Sometimes, you can find test files, e.g. `runtests.jl`. To run them, just do:
 
 ```
-julia runtests.jl
+> julia runtests.jl
 ```
 
-Most of the time, it's a tiny piece of code which uses the example in the description
-of the problem.
+Most of the time, it's a tiny piece of code which uses the example in the problem description.
