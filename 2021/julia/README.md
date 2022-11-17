@@ -1,0 +1,28 @@
+# Advent of Code / 2021 with Julia
+
+[Julia Programming Language](https://julialang.org/)
+
+## Usage
+
+Test with Julia 1.8.x
+
+The code can be splitted into a few `.jl` files.
+
+In order to get the answer for the different part of a problem to solve, just do:
+
+```
+> julia -L part_one.jl -E "main()"
+```
+
+There will be always a function `main()` which will return the answer.
+
+## Run Test
+
+Sometimes, you can find test files, e.g. `runtests.jl`. To run them, just do:
+
+```
+julia runtests.jl
+```
+
+Most of the time, it's a tiny piece of code which uses the example in the description
+of the problem.
