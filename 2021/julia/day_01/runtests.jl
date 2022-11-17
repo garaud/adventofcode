@@ -1,6 +1,5 @@
 using Test
 
-include("core.jl")
 include("part_one.jl")
 include("part_two.jl")
 
