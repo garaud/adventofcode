@@ -1,3 +1,5 @@
+include("common.jl")
+
 
 "Position type"
 struct Position
@@ -39,22 +41,8 @@ function command(position::Position, command, step::Int)
     end
 end
 
-function split_instruction(item)
-    name, value = split(item)
-    name, parse(Int, value)
-end
 
-
-"read a command input file"
-function readinput(fpath)
-    open(fpath, "r") do fobj
-        raw = read(fobj, String)
-        split(strip(raw), "\n")
-    end
-end
-
-
-"Multiply the horizontal position and depth"
+"Move the submarine according to the command list then multiply the horizontal position and depth"
 function compute(data)
     submarine = Position()
     for item in data
