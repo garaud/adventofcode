@@ -10,6 +10,7 @@ mutable struct Board
     Board(grid) = new(grid, zeros(Int, SIZE, SIZE))
 end
 
+
 "tell if yes or no, a board wins"
 function is_winning_board(board::Board)::Bool
     # any row or column are marked
@@ -31,6 +32,7 @@ function mark_board(board::Board, number::Int)::Board
     return board
 end
 
+
 "Extract the random numbers drawed"
 function extract_bingo_numbers(data::Vector)::Vector{Int}
     # just extract the first raw
@@ -38,6 +40,7 @@ function extract_bingo_numbers(data::Vector)::Vector{Int}
 end
 
 
+"Function which builds a board object from a linestring"
 function build_board(linestr::AbstractString)
     result = zeros(Int, SIZE, SIZE)
     V = split(linestr, "\n")
@@ -57,6 +60,12 @@ function extract_boards(data::Vector)::Vector{Board}
         push!(result, build_board(line))
     end
     result
+end
+
+
+"compute the score of a board, i.e. sum of all unmarked numbers"
+function board_score(board::Board)::Int
+    sum([board.grid[ind] for ind in CartesianIndices(board.mask) if board.mask[ind] == 0])
 end
 
 

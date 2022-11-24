@@ -1,12 +1,6 @@
 include("common.jl")
 
 
-"compute the score of a board, i.e. sum of all unmarked numbers"
-function board_score(board::Board)::Int
-    sum([board.grid[ind] for ind in CartesianIndices(board.mask) if board.mask[ind] == 0])
-end
-
-
 "compute the final score of the winning board"
 function final_score(data)
     bingo_numbers = extract_bingo_numbers(data)
