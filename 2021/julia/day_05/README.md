@@ -24,3 +24,7 @@
 > Each line of vents is given as a line segment in the format x1,y1 -> x2,y2 where
 > x1,y1 are the coordinates of one end the line segment and x2,y2 are the coordinates
 > of the other end.
+
+## Part two
+
+Also take into account diagonals.
