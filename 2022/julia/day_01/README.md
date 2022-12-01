@@ -25,3 +25,9 @@ can carry.
 
 10000
 ```
+
+## Part Two
+
+> The Elf carrying the most Calories of food might eventually run out of snacks.
+
+Find the top three Elves carrying the most Calories.
