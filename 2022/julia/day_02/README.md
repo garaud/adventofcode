@@ -27,3 +27,8 @@ C Z
 * 3 if the round was draw
 * 6 if you won
 
+## Part Two
+
+> The Elf finishes helping with the tent and sneaks back over to you. "Anyway, the
+> second column says how the round needs to end: X means you need to lose, Y means
+> you need to end the round in a draw, and Z means you need to win. Good luck!"

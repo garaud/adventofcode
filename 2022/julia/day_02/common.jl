@@ -9,11 +9,11 @@ struct Shape
     name::String
     score::Int
     function Shape(letter)
-        if letter in ["A", "X"]
+        if letter in ["A", "Rock", "X"]
             new("Rock", 1)
-        elseif letter in ["B", "Y"]
+        elseif letter in ["B", "Paper", "Y"]
             new("Paper", 2)
-        elseif letter in ["C", "Z"]
+        elseif letter in ["C", "Scissors", "Z"]
             new("Scissors", 3)
         else
             new("Unknown", -1)
@@ -57,14 +57,6 @@ function score(left, right)
     end
 end
 
-
-"guess the winner and compute the score for a round"
-function score_round(round::AbstractString)
-    left, right = split(round)
-    shape_left = Shape(left)
-    shape_right = Shape(right)
-    score(shape_right, shape_left) + shape_right.score
-end
 
 
 "read the input text file"
