@@ -17,6 +17,18 @@ function is_contain(left::Section, right::Section)::Bool
 end
 
 
+"do sections overlap each other or not"
+function do_not_overlap(left::Section, right::Section)::Bool
+    if ((left.x < right.x) & (left.x < right.y)) & ((left.y < right.x) & (left.y < right.y))
+        return true
+    elseif ((right.x < left.x) & (right.x < left.y)) & ((right.y < left.y) & (right.y < left.x))
+        return true
+    else
+        return false
+    end
+end
+
+
 "extract each section from a line"
 function sections_pair(line::AbstractString)
     left, right = split(line, ",")
