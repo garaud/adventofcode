@@ -33,3 +33,14 @@ mix test --include "Day01"
 ```
 
 if you just want to run a test case for a specific advent of code day.
+
+
+## Run a linter
+
+[credo](https://github.com/rrrene/credo) is a static code analysis tool.
+
+Just:
+
+```
+mix credo
+```
