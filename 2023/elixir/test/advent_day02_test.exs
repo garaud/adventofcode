@@ -15,7 +15,18 @@ defmodule AdventDay02Test do
     assert extract_blue_cubes("Game 3: red 3, green 1") == %{blue: []}
   end
 
+  test "max cubes of each color" do
+    game = %{red: [1, 3], green: [4], blue: [2, 5]}
+    assert max_cubes(game) == [3, 4, 5]
+    game = %{red: [1, 3], blue: [2]}
+    assert max_cubes(game) == [3, 2]
+  end
+
   test "part one" do
     assert solve_part_one("test-part-one") == 8
+  end
+
+  test "part two" do
+    assert solve_part_two("test-part-one") == 2286
   end
 end
