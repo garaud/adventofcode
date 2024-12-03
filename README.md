@@ -37,9 +37,11 @@ Some Elixir. I'm just curious about a Erlang family language (BEAM!)
 See [2023/elixir](2023/elixir)
 
 
-## 2024
+## 2024 (Elixir and Python)
 
 Once again, I try Elixir but also Python.
+
+Note that I'm quite confortable with Python because I daily use this programming language for many years.
 
 * See [2024/elixir](2024/elixir)
 * See [2024/python](2024/python)
