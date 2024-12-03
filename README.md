@@ -37,6 +37,14 @@ Some Elixir. I'm just curious about a Erlang family language (BEAM!)
 See [2023/elixir](2023/elixir)
 
 
+## 2024
+
+Once again, I try Elixir but also Python.
+
+* See [2024/elixir]
+* See [2024/python]
+
+
 ## BSD License
 
-Copyright © 2020-2022 Damien Garaud
+Copyright © 2020-2024 Damien Garaud
