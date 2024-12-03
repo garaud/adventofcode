@@ -41,8 +41,8 @@ See [2023/elixir](2023/elixir)
 
 Once again, I try Elixir but also Python.
 
-* See [2024/elixir]
-* See [2024/python]
+* See [2024/elixir](2024/elixir)
+* See [2024/python](2024/python)
 
 
 ## BSD License
