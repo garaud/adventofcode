@@ -1,0 +1,12 @@
+default: lint test
+
+lint:
+  echo Linting
+  ruff format
+  ruff check
+  mypy --namespace-package advent tests
+
+
+test:
+  echo Testing
+  pytest -s tests
