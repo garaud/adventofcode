@@ -1,5 +1,4 @@
 defmodule Advent.Day02 do
-
   @moduledoc """
   Day 02 - Red-Nosed Reports
 
@@ -8,7 +7,7 @@ defmodule Advent.Day02 do
 
   ❯ mix run -e 'Advent.Day02.main()
 
-  ## Part Two
+  ## Part One
 
   When I'm thinking about arrays of ints, I'm thinking about Numpy (array + scientific package for Python).
 
@@ -29,9 +28,8 @@ defmodule Advent.Day02 do
   Take a string of whitespaced digits and turn it into an array of integers
   """
   def make_array(line) do
-    String.split(line) |> Enum.map(fn x -> String.to_integer(x) end) |> Nx.tensor
+    line |> String.split() |> Enum.map(fn x -> String.to_integer(x) end) |> Nx.tensor()
   end
-
 
   @doc """
   For the part two, I want to generate a list of index to discard one element before computing
@@ -42,21 +40,20 @@ defmodule Advent.Day02 do
     Enum.map(indices, fn j -> Nx.tensor(Enum.reject(indices, fn i -> i == j end)) end)
   end
 
-
   def check_report_with_tolerance(report) do
     # there is a better way: not to check everything. The first element which is safe, we
     # can return true...
     indices = generate_index(Nx.size(report))
     possibilities = Enum.map(indices, fn x -> Nx.take(report, x) end)
-    Enum.any?(Enum.map(possibilities, &is_safe/1))
+    Enum.any?(Enum.map(possibilities, &safe?/1))
   end
 
-
-  def is_monotonic(report) do
+  def monotonic?(report) do
     diff = Nx.diff(report)
     size_check = Nx.size(diff)
-    ((Nx.sum(Nx.greater(0, diff)) |> Nx.to_number == size_check) or
-     (Nx.sum(Nx.less(0, diff)) |> Nx.to_number == size_check))
+
+    0 |> Nx.greater(diff) |> Nx.sum() |> Nx.to_number() == size_check or
+      0 |> Nx.less(diff) |> Nx.sum() |> Nx.to_number() == size_check
   end
 
   @doc """
@@ -65,17 +62,15 @@ defmodule Advent.Day02 do
   def check_adjacent_levels(report) do
     diff = Nx.diff(report)
     size_check = Nx.size(diff)
-    Nx.sum(Nx.greater_equal(3, Nx.abs(diff))) |> Nx.to_number == size_check
+    3 |> Nx.greater_equal(Nx.abs(diff)) |> Nx.sum() |> Nx.to_number() == size_check
   end
 
   @doc """
   Is the report safe: (1) monotonic and (2) not so high discrepancy between adjacent levels
   """
-  def is_safe(report) do
-    is_monotonic(report) and check_adjacent_levels(report)
+  def safe?(report) do
+    monotonic?(report) and check_adjacent_levels(report)
   end
-
-
 
   @spec solve_part_one(String.t()) :: integer()
   @doc """
@@ -89,9 +84,8 @@ defmodule Advent.Day02 do
     # read each line
     lines = String.split(content, "\n")
     reports = Enum.map(lines, &make_array/1)
-    Enum.map(reports, &Advent.Day02.is_safe/1) |> Nx.tensor |> Nx.sum |> Nx.to_number
+    reports |> Enum.map(&safe?/1) |> Nx.tensor() |> Nx.sum() |> Nx.to_number()
   end
-
 
   @doc """
   Quite similar with part one but with at least a single tolerance
@@ -101,11 +95,10 @@ defmodule Advent.Day02 do
     # read each line
     lines = String.split(content, "\n")
     reports = Enum.map(lines, &make_array/1)
-    Enum.map(reports, &check_report_with_tolerance/1) |> Nx.tensor |> Nx.sum |> Nx.to_number()
+    reports |> Enum.map(&check_report_with_tolerance/1) |> Nx.tensor() |> Nx.sum() |> Nx.to_number()
   end
 
-
-  def main() do
+  def main do
     result = solve_part_one("inputs")
     IO.puts("result part-one: #{result}")
     result = solve_part_two("inputs")

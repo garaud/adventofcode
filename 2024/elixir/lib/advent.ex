@@ -21,6 +21,6 @@ defmodule Advent do
   """
   def read_input(day, filetype) do
     fpath = Path.join([File.cwd!(), "inputs", "day-#{day}", "#{filetype}.txt"])
-    File.read!(fpath) |> String.trim()
+    fpath |> File.read!() |> String.trim()
   end
 end

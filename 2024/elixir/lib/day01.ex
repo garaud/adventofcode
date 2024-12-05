@@ -26,7 +26,6 @@ defmodule Advent.Day01 do
     Enum.count(right_list, fn x -> x == number end)
   end
 
-
   @spec solve_part_one(String.t()) :: integer()
   @doc """
   extract each first & last digits for each text line.
@@ -61,16 +60,16 @@ defmodule Advent.Day01 do
     # split the text content into two lists of integers
     lists = split_list(lines)
     # find occurrences
-    occurrence = lists[:first]
-      |> Enum.map(fn x -> {x, find_occurrence(x, lists[:second])} end)
-      |> Enum.into(%{})
+    occurrence =
+      Map.new(lists[:first], fn x -> {x, find_occurrence(x, lists[:second])} end)
+
     # similarity score == x * occurrence of x
     similarity = Enum.map(lists[:first], fn x -> x * occurrence[x] end)
     # compute the sum
     Enum.reduce(similarity, fn x, acc -> x + acc end)
   end
 
-  def main() do
+  def main do
     result = solve_part_one("inputs")
     IO.puts("result part-one: #{result}")
     result = solve_part_two("inputs")
