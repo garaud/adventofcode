@@ -1,0 +1,11 @@
+default: lint test
+
+lint:
+  echo Linting
+  mix format
+  mix credo
+
+
+test:
+  echo Testing
+  mix test
