@@ -18,6 +18,9 @@ And you can run the main solving program for a specific day:
 
 `mix run -e 'Advent.Day01.main()'` for the day 01 for instance, should print the result.
 
+You can also just run (1) a formatter, (2) a linter and (3) run the tests with
+`just`. See the [just CLI tool](https://just.systems/man/en/).
+
 ## Run Tests
 
 Just do:
@@ -44,3 +47,5 @@ Just:
 ```
 mix credo
 ```
+
+I also use the [Styler](https://github.com/adobe/elixir-styler) formatter.
