@@ -1,0 +1,27 @@
+*.pyc
+*.log
+.settings
+.DS_Store
+.python-version
+
+# Editor directories and files
+.idea
+*.iml
+commit.txt
+compressed
+*.egg-info
+*.pid
+**/.cache
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.nyc_output
+.vscode
+
+# DotEnv configuration variables
+.env
+.envrc
+
+# python
+build
