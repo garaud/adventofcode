@@ -3,12 +3,15 @@
 Advent of code 2024 -- https://adventofcode.com/2024/
 """
 
+import os
 from dataclasses import dataclass
 from enum import StrEnum, auto
 from pathlib import Path
 
 _HERE = Path(__file__).absolute().parent
-INPUT_RESOURCES = _HERE / ".." / "inputs"
+# we suppose that the resources folder with the 'day-dd' subfolders
+# are specified in the 'AOC_2024' environment variable.
+INPUT_RESOURCES = Path(os.getenv("AOC_2024", default=_HERE / "inputs"))
 
 
 class FileType(StrEnum):
