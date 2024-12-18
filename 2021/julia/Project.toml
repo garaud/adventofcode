@@ -1,0 +1,7 @@
+name = "adventofcode_2021"
+uuid = "6898abeb-e790-42d5-a6b2-f772803bba8f"
+authors = ["Damien Garaud"]
+version = "1.0.0"
+
+[deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
