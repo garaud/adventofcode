@@ -10,8 +10,11 @@ Unfortunately, there are only one week of solved problems each year...
 
 As the Advent of Code does not allow to redistribute the data, I don't add the different inputs to this repo. Take a look at https://adventofcode.com/about#faq_copying
 
-The repo supposed that you have a `resources` folder in the repo root path with `resources/<year>/<day-nn>` with the
-different input text files necessary to run the tests or to solve the main input file.
+The repo supposes that you have a `resources` folder in the repo root path with `resources/<year>/<day-nn>` with the
+different input text files necessary to run the tests or to solve the main input file. It's possible that old file, e.g.
+Clojure or Julia files from 2020, 2021, ... don't work since the `input` text file were removed and moved into another
+folder which is not in this repo. But it's possible to make it work if you put the related input text file into the
+folder related to the day of the problem.
 
 
 ## 2020 (Clojure)
