@@ -8,6 +8,11 @@ For each year and each daily problem, I try to make some unit tests with the sam
 
 Unfortunately, there are only one week of solved problems each year...
 
+As the Advent of Code does not allow to redistribute the data, I don't add the different inputs to this repo. Take a look at https://adventofcode.com/about#faq_copying
+
+The repo supposed that you have a `resources` folder in the repo root path with `resources/<year>/<day-nn>` with the
+different input text files necessary to run the tests or to solve the main input file.
+
 
 ## 2020 (Clojure)
 
