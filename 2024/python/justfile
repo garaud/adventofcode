@@ -9,4 +9,4 @@ lint:
 
 test:
   echo Testing
-  pytest -s tests
+  pytest -s --durations=0 -v tests
